@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirhan Yılmaz | Devix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #030712;
+            --card-bg: rgba(13, 17, 23, 0.9);
+            --border: rgba(239, 68, 68, 0.2);
+            --primary: #ef4444;
+            --primary-glow: rgba(239, 68, 68, 0.25);
+            --text: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(239, 68, 68, 0.08) 0px, transparent 60%),
+                radial-gradient(at 0% 100%, rgba(15, 23, 42, 1) 0px, transparent 100%);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(239, 68, 68, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .terminal-tag {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--primary);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .roles {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .service-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 14px 18px;
+            border-radius: 10px;
+        }
+
+        .service-box h3 {
+            font-size: 0.95rem;
+            color: #f8fafc;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-box h3 i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .service-box p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .discord-cta {
+            background: rgba(88, 101, 242, 0.08);
+            border: 1px solid rgba(88, 101, 242, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .discord-cta p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .btn-discord {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #5865F2;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+        }
+
+        .btn-discord:hover {
+            background-color: #4752C4;
+            transform: translateY(-2px);
+        }
+
+        /* Sosyal Medya İletişim Alanı */
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 5px;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-icon.active {
+            color: #fff;
+            border-color: rgba(239, 68, 68, 0.4);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .social-icon:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="main-card">
+            <div class="terminal-tag">&gt; system_access: granted</div>
+            <h1>Emirhan Yılmaz</h1>
+            <div class="roles">FULL-STACK WEB & FIVEM DEVELOPER</div>
+
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3><i class="fa-solid fa-code"></i> Backend & Web Architecture</h3>
+                    <p>High-performance web applications, secure REST APIs, and custom server infrastructure.</p>
+                </div>
+                <div class="service-box">
+                    <h3><i class="fa-solid fa-terminal"></i> FiveM Systems & NUI / UI</h3>
+                    <p>Advanced synchronization, custom zero-lag HTML/JS/React interfaces, and secure resource optimization.</p>
+                </div>
+            </div>
+
+            <div class="discord-cta">
+                <p>Secure connection established. Join the network for custom requests or direct communication.</p>
+                <a href="https://discord.gg/vB5N5q8SX" target="_blank" class="btn-discord">
+                    <i class="fa-brands fa-discord"></i> Join Discord
+                </a>
+            </div>
+
+            <div class="social-footer">
+                <!-- Aktif İnstagram -->
+                <a href="https://www.instagram.com/eemirhany?stkn=MW9nMXczd3BtZjVwaQ==" target="_blank" class="social-icon active" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <!-- Boş duran diğer logolar -->
+                <a href="#" class="social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" class="social-icon" title="Twitter / X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" title="Steam">
+                    <i class="fa-brands fa-steam"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
