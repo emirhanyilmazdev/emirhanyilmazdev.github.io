@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devix // Emirhan Yılmaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090d16;
+            --card-bg: #111827;
+            --border: #1f293d;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --discord-color: #5865F2;
+            --insta-color: #E1306C;
+            --text: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background: var(--accent-glow);
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Services */
+        .service-box {
+            margin-bottom: 16px;
+        }
+
+        .service-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-box h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .service-box p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Social Cards */
+        .social-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .social-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .social-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .social-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .social-btn:hover {
+            opacity: 0.9;
+        }
+
+        .discord-btn {
+            background-color: var(--discord-color);
+        }
+
+        .insta-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .tech-grid, .social-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Hero / Profil Alanı -->
+        <div class="card hero">
+            <div class="hero-content">
+                <span class="brand-tag">DEVIX // SYSTEM</span>
+                <h1>Emirhan Yılmaz</h1>
+                <p>Full-Stack & FiveM Developer. High-performance web applications, scalable backend architectures, and custom systems.</p>
+            </div>
+        </div>
+
+        <!-- Sosyal Medya Kartları (Discord & Instagram) -->
+        <div class="social-container">
+            <!-- Discord Kartı -->
+            <div class="card social-card" style="border-color: rgba(88, 101, 242, 0.3);">
+                <div class="social-info">
+                    <h3>Discord</h3>
+                    <p>Sunucuma katıl</p>
+                </div>
+                <a href="https://discord.gg/zTRUH3MFT" target="_blank" class="social-btn discord-btn">Bağlan</a>
+            </div>
+
+            <!-- Instagram Kartı -->
+            <div class="card social-card" style="border-color: rgba(225, 48, 108, 0.3);">
+                <div class="social-info">
+                    <h3>Instagram</h3>
+                    <p>@eemirhany</p>
+                </div>
+                <a href="https://www.instagram.com/eemirhany?stkn=MW9nMXczd3BtZjVwaQ==" target="_blank" class="social-btn insta-btn">Takip Et</a>
+            </div>
+        </div>
+
+        <!-- Tech Stack & Skills -->
+        <div class="card">
+            <h2 class="section-title">⚡ Tech Stack & Skills</h2>
+            <div class="tech-grid">
+                <div class="tech-item">🟡 JavaScript / TS</div>
+                <div class="tech-item">⚛️ React / Next.js</div>
+                <div class="tech-item">🟢 Node.js</div>
+                <div class="tech-item">🌐 Lua / FiveM</div>
+                <div class="tech-item">🗄️ MySQL / SQL</div>
+                <div class="tech-item">🎨 HTML / CSS</div>
+            </div>
+        </div>
+
+        <!-- Services & Expertise -->
+        <div class="card">
+            <h2 class="section-title">🚀 Services & Expertise</h2>
+            
+            <div class="service-box">
+                <h3>Full-Stack Web Development</h3>
+                <p>Modern, responsive web applications, robust backend architectures, and custom API integrations.</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+            <div class="service-box">
+                <h3>FiveM Custom Systems & NUI</h3>
+                <p>Advanced server-side optimizations, custom scripts, and high-performance NUI interfaces.</p>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Emirhan Yılmaz (Devix). Tüm hakları saklıdır.
+        </footer>
+
+    </div>
+
+</body>
+</html>
